@@ -14,12 +14,12 @@ class App extends React.Component {
       <BrowserRouter>
         <h1>TRYBETUNES</h1>
         <Switch>
-          <Route path="/" component={ Login } />
-          <Route path="/search" component={ Search } />
+          <Route exact path="/" component={ Login } />
           <Route path="/album/:id" component={ Album } />
+          <Route path="/profile/edit" component={ ProfileEdit } />
+          <Route path="/search" component={ Search } />
           <Route path="/favorites" component={ Favorites } />
           <Route path="/profile" component={ Profile } />
-          <Route path="/profile/edit" component={ ProfileEdit } />
           <Route path="*" component={ NotFound } />
         </Switch>
       </BrowserRouter>
