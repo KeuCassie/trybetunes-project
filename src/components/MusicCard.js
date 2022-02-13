@@ -4,10 +4,11 @@ import { addSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
-  constructor() {
+  constructor(props) {
     super();
+    const { checked } = props;
     this.state = {
-      checked: false,
+      checked,
       isLoading: false,
     };
   }
@@ -64,6 +65,7 @@ class MusicCard extends Component {
 
 MusicCard.propTypes = {
   music: PropTypes.arrayOf.isRequired,
+  checked: PropTypes.bool.isRequired,
 };
 
 export default MusicCard;

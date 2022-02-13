@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Album extends Component {
       albumId: props.match.params.id,
       musicList: [],
       isLoading: true,
+      favorite: [],
     };
   }
 
@@ -19,16 +21,18 @@ class Album extends Component {
     const { albumId } = this.state;
     const musics = await getMusics(albumId);
     const { artistName, collectionName } = musics[0];
+    const favoriteSongs = await getFavoriteSongs();
     this.setState({
       artistName,
       collectionName,
       musicList: musics.slice(1),
       isLoading: false,
+      favorite: favoriteSongs,
     });
   }
 
   render() {
-    const { artistName, collectionName, musicList, isLoading } = this.state;
+    const { artistName, collectionName, musicList, isLoading, favorite } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -43,6 +47,7 @@ class Album extends Component {
           <MusicCard
             key={ music.trackId }
             music={ music }
+            checked={ favorite.some((song) => song.trackId === music.trackId) }
           />
         ))}
       </div>
