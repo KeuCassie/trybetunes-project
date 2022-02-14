@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../App.css';
 
 class Login extends Component {
   constructor() {
@@ -54,14 +55,16 @@ class Login extends Component {
         <div data-testid="page-login">
           {isLoading ? <Loading /> // condicional verifica os estado de isLoading e age de acordo com a resposta
             : (
-              <form>
+              <form className="form-login">
                 <input
+                  className="input-login"
                   type=""
                   value={ inputName } // valor do input recebe o inputName
                   onChange={ this.onInputChange } // recebe a função que modifica o valor do input
                   data-testid="login-name-input"
                 />
                 <button
+                  className="button-login"
                   type="button"
                   data-testid="login-submit-button"
                   onClick={ this.onClickSave } // recebe a função que salva o nome da pessoa ao clicar

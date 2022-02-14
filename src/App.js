@@ -7,12 +7,13 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <h1>TRYBETUNES</h1>
+        <h1 className="nameTitle">TRYBETUNES</h1>
         <Switch>
           <Route exact path="/" component={ Login } />
           <Route path="/album/:id" component={ Album } />

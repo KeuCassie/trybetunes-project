@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Permanent+Marker&family=Shizuru&family=Supermerca+One&display=swap') ;
+
+body {
+  background-image: url('https://i.pinimg.com/originals/36/e3/31/36e3313f50f939b90ccb1b8202d1d0d1.jpg');
+}
+
+.nameTitle {
+  background-color: rgb(104, 75, 182);
+  font-family: Permanent Marker , cursive;
+  font-size: 50px;
+  margin-top: 0%;
+  padding: 30px;
+  text-align: center;
+}
+
+.form-login {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-search {
+  display: flex;
+  justify-content: center;
+}
+
+.input-login {
+  border-radius: 12px;
+  margin-right: 10px;
+  width: 35%;
+}
+
+.input-search {
+  border-radius: 12px;
+  margin: 10px;
+}
+
+.button-login {
+  background-color: rgb(104, 75, 182);
+  border-radius: 12px;
+  color: white;
+  width: 10%;
+}
+
+.button-search {
+  background-color: rgb(104, 75, 182);
+  border-radius: 12px;
+  color: white;
+  width: 10%;
+}
+
+.loading {
+  color: rgb(104, 75, 182);
+  width: 50%;
+}
+
+.links {
+  align-items: center;
+  background-color: rgb(104, 75, 182);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+

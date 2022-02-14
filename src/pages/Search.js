@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
 import ArtistAlbums from '../components/ArtistAlbums';
+import '../App.css';
 
 class Search extends Component {
   state = {
@@ -59,9 +60,10 @@ class Search extends Component {
         <Header />
         {isLoading ? <Loading /> // ternário - se for true renderiza um se false renderiza outro
           : (
-            <form>
+            <form className="form-search">
               <label htmlFor="inputText">
                 <input
+                  className="input-search"
                   data-testid="search-artist-input"
                   type="text"
                   name="inputText"
@@ -70,6 +72,7 @@ class Search extends Component {
                 />
               </label>
               <button
+                className="button-search"
                 data-testid="search-artist-button"
                 type="button"
                 disabled={ disableButton } // se true ou false desabilita o botão
